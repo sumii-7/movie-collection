@@ -34,11 +34,10 @@ fetch(
   })
   .catch((err) => console.error(err));
 
+// 영화 id 알림창 띄우기
 function showAlert(id) {
   alert("영화 id: " + id);
 }
 
-//title 제목
-//overview 내용 요약
-//poster_path 포스터 이미지 경로
-//vote_average 평점
+// const movie_name = document.getElementById("movie_name").value;
+// console.log(movie_name);
