@@ -31,6 +31,8 @@ fetch(
     });
 
     moviesArea.innerHTML = html; // html 영역에 html 붙이기
+
+    const movie_search = document.getElementById("movie_name").value;
   })
   .catch((err) => console.error(err));
 
