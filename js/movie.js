@@ -38,6 +38,3 @@ fetch(
 function showAlert(id) {
   alert("영화 id: " + id);
 }
-
-// const movie_name = document.getElementById("movie_name").value;
-// console.log(movie_name);
