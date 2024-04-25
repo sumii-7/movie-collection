@@ -66,6 +66,7 @@ button {
   border-radius: 10px;
   margin: 20px;
   padding: 15px;
+  float: left;
 }
 
 .movie_card > h3 {
