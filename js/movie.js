@@ -22,7 +22,7 @@ fetch(
       moviesArea.innerHTML = "";
       const res = movies
         .map((movie) => {
-          if (movie.title.includes(val)) {
+          if (movie.title.toLowerCase().includes(val)) {
             return `
     <div class="movie_card" onclick="showAlert(${movie.id})">
         <div class="image_box"><img class="image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}"></div>
