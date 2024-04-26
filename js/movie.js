@@ -19,22 +19,20 @@ fetch(
     const moviesArea = document.getElementById("card");
 
     function movieList(val = "") {
-      moviesArea.innerHTML = "";
-      const res = movies
+      moviesArea.innerHTML = movies
         .map((movie) => {
           if (movie.title.toLowerCase().includes(val)) {
             return `
     <div class="movie_card" onclick="showAlert(${movie.id})">
-        <div class="image_box"><img class="image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}"></div>
+        <img class="image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
         <h3>${movie.title}</h3>
-        <p>${movie.overview}</p>
-        <p>Rating: ${movie.vote_average}</p>
+        <p class= "overview">${movie.overview}</p>
+        <p class= "vote_average" >Rating: ${movie.vote_average}</p>
     </div>
     `;
           } // html 템플릿 추가
         })
         .join("");
-      moviesArea.innerHTML = res;
     }
     movieList();
 
