@@ -13,7 +13,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    const movies = data.results; // 영화 목록 추출
+    const movies = data.results; // 영화 목록 추출∫
 
     // html의 id 값 가져오기
     const moviesArea = document.getElementById("card");
