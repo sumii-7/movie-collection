@@ -13,32 +13,43 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    const movies = data.results; // 영화 목록 추출
+    const movies = data.results; // 영화 목록 추출∫
 
-    const moviesArea = document.getElementById("card"); // 영화를 추가할 html 영역 선택
+    // html의 id 값 가져오기
+    const moviesArea = document.getElementById("card");
 
-    let html = ""; // html 템플릿 문자열 초기화
-
-    movies.forEach((movie) => {
-      html += `
+    function movieList(val = "") {
+      moviesArea.innerHTML = movies
+        .map((movie) => {
+          if (movie.title.toLowerCase().includes(val)) {
+            return `
     <div class="movie_card" onclick="showAlert(${movie.id})">
-    <div class="image_box"><img class="image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}"></div>
+        <img class="image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
         <h3>${movie.title}</h3>
-        <p>${movie.overview}</p>
-        <p>Rating: ${movie.vote_average}</p>
+        <p class= "overview">${movie.overview}</p>
+        <p class= "vote_average" >Rating: ${movie.vote_average}</p>
     </div>
-    `; // html 템플릿 추가
-    });
+    `;
+          } // html 템플릿 추가
+        })
+        .join("");
+    }
+    movieList();
 
-    moviesArea.innerHTML = html; // html 영역에 html 붙이기
+    // 검색기능 구현을 위한 html id 가져오기
+    const searchInput = document.getElementById("movie_name"); // input
+    const searchBtn = document.getElementById("searchbtn"); // button
+
+    searchBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const val = searchInput.value;
+      console.log(val);
+      movieList(val);
+    });
   })
   .catch((err) => console.error(err));
 
+// 영화 id 알림창 띄우기
 function showAlert(id) {
   alert("영화 id: " + id);
 }
-
-//title 제목
-//overview 내용 요약
-//poster_path 포스터 이미지 경로
-//vote_average 평점

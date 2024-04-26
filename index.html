@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>내배캠 최고 평점 영화 콜렉션</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="image/favicon.ico" />
   </head>
   <body>
     <script src="js/movie.js"></script>
-    <h1 class="title">내배캠 최고 평점 영화 콜렉션</h1>
+    <header><h1 class="title">내배캠 최고 평점 영화 콜렉션</h1></header>
 
     <form class="search">
       <label for="movie_name">영화 검색 : </label>
@@ -17,7 +18,7 @@
         placeholder="영화 제목을 검색해 보세요!"
         id="movie_name"
       />
-      <button type="submit">검색</button>
+      <button id="searchbtn">검색</button>
     </form>
 
     <section id="card"></section>

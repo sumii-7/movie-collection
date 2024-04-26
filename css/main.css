@@ -59,28 +59,49 @@ button {
 }
 
 /* card */
+#card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  text-align: center;
+}
+
 .movie_card {
   width: 260px;
   height: 560px;
   background-color: skyblue;
   border-radius: 10px;
-  margin: 20px;
-  padding: 15px;
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie_card > h3 {
   font-size: 18px;
   margin: 5px 0 7px;
+  height: 10%;
 }
 
-.image_box {
+/* .image_box {
   width: 100%;
   display: flex;
-}
+} */
 
 .image {
-  width: 200px;
-  height: 300px;
+  height: 50%;
   border-radius: 10px;
   margin: 0 auto;
+}
+
+.overview {
+  height: 35%;
+  overflow-y: auto;
+}
+
+.vote_average {
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
