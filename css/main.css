@@ -64,6 +64,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 }
 
 .movie_card {
@@ -104,4 +105,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#movie_name {
+  text-indent: 10px;
 }
